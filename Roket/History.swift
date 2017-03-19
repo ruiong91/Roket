@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class History {
+    
+    var date : Date?
+    var steps : String?
+    
+    init(){}
+}

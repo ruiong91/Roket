@@ -8,11 +8,12 @@
 
 import Foundation
 
-class Challenge {
+class Game {
     
     var players : [User]?
     var startTime : TimeInterval?
     var period : TimeInterval?
+    var gameID : String?
     
     
     init(){}
