@@ -10,7 +10,7 @@ import UIKit
 
 class ChallengeViewController: UIViewController, UICollectionViewDataSource {
     
-    var players : [User] : []
+    var players : [User] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
