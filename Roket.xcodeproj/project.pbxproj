@@ -10,6 +10,8 @@
 		387196C7CE827E0E4D08EA67 /* Pods_Roket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D28811555267CE3022DA8B42 /* Pods_Roket.framework */; };
 		6837BCEF1E7E815E00A9CA98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BCEE1E7E815E00A9CA98 /* ViewController.swift */; };
 		6837BCF11E7E856200A9CA98 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BCF01E7E856200A9CA98 /* History.swift */; };
+		6837BCFA1E7ED7DE00A9CA98 /* RankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BCF81E7ED7DE00A9CA98 /* RankCollectionViewCell.swift */; };
+		6837BCFB1E7ED7DE00A9CA98 /* RankCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6837BCF91E7ED7DE00A9CA98 /* RankCollectionViewCell.xib */; };
 		68B645931E7BC4C100EA0110 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B645921E7BC4C100EA0110 /* AppDelegate.swift */; };
 		68B645951E7BC4C100EA0110 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B645941E7BC4C100EA0110 /* HomeViewController.swift */; };
 		68B645981E7BC4C100EA0110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68B645961E7BC4C100EA0110 /* Main.storyboard */; };
@@ -19,7 +21,6 @@
 		68B645A81E7BC5DC00EA0110 /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B645A71E7BC5DC00EA0110 /* InviteViewController.swift */; };
 		68B645AA1E7BC5EF00EA0110 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B645A91E7BC5EF00EA0110 /* ChallengeViewController.swift */; };
 		68B645AC1E7BC60D00EA0110 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B645AB1E7BC60D00EA0110 /* HistoryViewController.swift */; };
-		68B645AE1E7BC62600EA0110 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B645AD1E7BC62600EA0110 /* ResultViewController.swift */; };
 		68B645B31E7BE3A600EA0110 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B645B21E7BE3A600EA0110 /* LogInViewController.swift */; };
 		68B645B51E7BE3B500EA0110 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B645B41E7BE3B500EA0110 /* SignUpViewController.swift */; };
 		68B645B71E7BF6A700EA0110 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68B645B61E7BF6A600EA0110 /* GoogleService-Info.plist */; };
@@ -39,6 +40,8 @@
 		5156B63F0EE6FC9E7F388017 /* Pods-Roket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roket.release.xcconfig"; path = "Pods/Target Support Files/Pods-Roket/Pods-Roket.release.xcconfig"; sourceTree = "<group>"; };
 		6837BCEE1E7E815E00A9CA98 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6837BCF01E7E856200A9CA98 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		6837BCF81E7ED7DE00A9CA98 /* RankCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankCollectionViewCell.swift; sourceTree = "<group>"; };
+		6837BCF91E7ED7DE00A9CA98 /* RankCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RankCollectionViewCell.xib; sourceTree = "<group>"; };
 		68B6458F1E7BC4C100EA0110 /* Roket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B645921E7BC4C100EA0110 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68B645941E7BC4C100EA0110 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +53,6 @@
 		68B645A71E7BC5DC00EA0110 /* InviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
 		68B645A91E7BC5EF00EA0110 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		68B645AB1E7BC60D00EA0110 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		68B645AD1E7BC62600EA0110 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		68B645B21E7BE3A600EA0110 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		68B645B41E7BE3B500EA0110 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		68B645B61E7BF6A600EA0110 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				68B645961E7BC4C100EA0110 /* Main.storyboard */,
 				68B645C21E7D119200EA0110 /* UserTableViewCell.xib */,
+				6837BCF91E7ED7DE00A9CA98 /* RankCollectionViewCell.xib */,
 				68B6459E1E7BC4C100EA0110 /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -133,7 +136,7 @@
 				68B645C11E7D119200EA0110 /* UserTableViewCell.swift */,
 				68B645A91E7BC5EF00EA0110 /* ChallengeViewController.swift */,
 				68B645AB1E7BC60D00EA0110 /* HistoryViewController.swift */,
-				68B645AD1E7BC62600EA0110 /* ResultViewController.swift */,
+				6837BCF81E7ED7DE00A9CA98 /* RankCollectionViewCell.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				68B645B71E7BF6A700EA0110 /* GoogleService-Info.plist in Resources */,
 				68B6459D1E7BC4C100EA0110 /* Assets.xcassets in Resources */,
 				68B645981E7BC4C100EA0110 /* Main.storyboard in Resources */,
+				6837BCFB1E7ED7DE00A9CA98 /* RankCollectionViewCell.xib in Resources */,
 				68B645C41E7D119200EA0110 /* UserTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,12 +322,12 @@
 				68B645AA1E7BC5EF00EA0110 /* ChallengeViewController.swift in Sources */,
 				68B645C61E7D1F7900EA0110 /* Game.swift in Sources */,
 				68B645C01E7C16E200EA0110 /* TransitionManager.swift in Sources */,
-				68B645AE1E7BC62600EA0110 /* ResultViewController.swift in Sources */,
 				68B645951E7BC4C100EA0110 /* HomeViewController.swift in Sources */,
 				68B645B31E7BE3A600EA0110 /* LogInViewController.swift in Sources */,
 				6837BCEF1E7E815E00A9CA98 /* ViewController.swift in Sources */,
 				68B645AC1E7BC60D00EA0110 /* HistoryViewController.swift in Sources */,
 				68B645CB1E7D2CFD00EA0110 /* HealthKitManager.swift in Sources */,
+				6837BCFA1E7ED7DE00A9CA98 /* RankCollectionViewCell.swift in Sources */,
 				68B645B51E7BE3B500EA0110 /* SignUpViewController.swift in Sources */,
 				68B645931E7BC4C100EA0110 /* AppDelegate.swift in Sources */,
 				68B645BC1E7C0EA200EA0110 /* ReadMe - AppFeatures.swift in Sources */,

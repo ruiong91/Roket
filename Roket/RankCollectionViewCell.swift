@@ -9,6 +9,9 @@
 import UIKit
 
 class RankCollectionViewCell: UICollectionViewCell {
+    
+    static let cellIdentifier = "rankCell"
+    static let cellNib = UINib(nibName: "RankCollectionViewCell", bundle: Bundle.main)
 
     override func awakeFromNib() {
         super.awakeFromNib()
