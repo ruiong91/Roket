@@ -18,4 +18,9 @@ class RankCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
+    @IBOutlet weak var ppImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var rankLabel: UILabel!
+    @IBOutlet weak var stepsLabel: UILabel!
 }

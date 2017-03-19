@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+class Player {
+    
+    
+    var uid : String = ""
+    var score : String = ""
+
+    init(){}
+
+
+}

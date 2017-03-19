@@ -72,6 +72,12 @@
                 <constraint firstItem="saO-XS-1rf" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="gVE-z9-ahK"/>
             </constraints>
             <size key="customSize" width="233" height="520"/>
+            <connections>
+                <outlet property="nameLabel" destination="saO-XS-1rf" id="FPn-Hb-xEQ"/>
+                <outlet property="ppImageView" destination="jcj-GX-Kiq" id="fAZ-yA-9B4"/>
+                <outlet property="rankLabel" destination="F3K-6a-geo" id="s5B-7L-wTZ"/>
+                <outlet property="stepsLabel" destination="5Mk-yc-2FJ" id="N7I-iz-csr"/>
+            </connections>
             <point key="canvasLocation" x="125.5" y="333"/>
         </collectionViewCell>
     </objects>

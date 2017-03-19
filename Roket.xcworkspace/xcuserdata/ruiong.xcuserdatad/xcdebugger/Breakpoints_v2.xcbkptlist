@@ -17,38 +17,6 @@
             endingLineNumber = "146"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Roket.AddUserViewController.tableView (__ObjC.UITableView, cellForRowAt : Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
-                  moduleName = "Roket"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruiong/Desktop/IOS%20course%20/Roket/Roket/AddUserViewController.swift"
-                  timestampString = "511623816.845206"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "1364">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Roket.AddUserViewController.tableView (__ObjC.UITableView, cellForRowAt : Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
-                  moduleName = "Roket"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruiong/Desktop/IOS%20course%20/Roket/Roket/AddUserViewController.swift"
-                  timestampString = "511623816.847419"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "1408">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -106,12 +74,12 @@
                   moduleName = "Roket"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ruiong/Desktop/IOS%20course%20/Roket/Roket/AddUserViewController.swift"
-                  timestampString = "511623816.861947"
+                  timestampString = "511631695.231951"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "147"
                   endingLineNumber = "147"
-                  offsetFromSymbolStart = "1424">
+                  offsetFromSymbolStart = "1734">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -121,12 +89,12 @@
                   moduleName = "Roket"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ruiong/Desktop/IOS%20course%20/Roket/Roket/AddUserViewController.swift"
-                  timestampString = "511623816.864997"
+                  timestampString = "511631695.235934"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "147"
                   endingLineNumber = "147"
-                  offsetFromSymbolStart = "1492">
+                  offsetFromSymbolStart = "1827">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -170,12 +138,12 @@
                   moduleName = "Roket"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ruiong/Desktop/IOS%20course%20/Roket/Roket/AddUserViewController.swift"
-                  timestampString = "511623816.874365"
+                  timestampString = "511631695.252019"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
                   endingLineNumber = "56"
-                  offsetFromSymbolStart = "44">
+                  offsetFromSymbolStart = "38">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -185,12 +153,12 @@
                   moduleName = "Roket"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ruiong/Desktop/IOS%20course%20/Roket/Roket/AddUserViewController.swift"
-                  timestampString = "511623816.876573"
+                  timestampString = "511631695.25773"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "58"
                   endingLineNumber = "58"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "23">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -241,6 +209,182 @@
             endingLineNumber = "61"
             landmarkName = "fetchProfilePic(key:user:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Roket/ChallengeViewController.swift"
+            timestampString = "511631674.767013"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getPlayersData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Roket.ChallengeViewController.getPlayersData () -&gt; ()"
+                  moduleName = "Roket"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruiong/Desktop/IOS%20course%20/Roket/Roket/ChallengeViewController.swift"
+                  timestampString = "511631695.287613"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "22">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Roket.ChallengeViewController.(getPlayersData () -&gt; ()).(closure #1)"
+                  moduleName = "Roket"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruiong/Desktop/IOS%20course%20/Roket/Roket/ChallengeViewController.swift"
+                  timestampString = "511631695.292175"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Roket/ChallengeViewController.swift"
+            timestampString = "511631676.258868"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getPlayersData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Roket/ChallengeViewController.swift"
+            timestampString = "511631677.176772"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getPlayersData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Roket/ChallengeViewController.swift"
+            timestampString = "511631677.840734"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getPlayersData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Roket/ChallengeViewController.swift"
+            timestampString = "511631678.562769"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "getPlayersData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Roket/ChallengeViewController.swift"
+            timestampString = "511631679.620243"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getPlayersData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Roket/ChallengeViewController.swift"
+            timestampString = "511631744.648141"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "getPlayersData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Roket.ChallengeViewController.getPlayersData () -&gt; ()"
+                  moduleName = "Roket"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruiong/Desktop/IOS%20course%20/Roket/Roket/ChallengeViewController.swift"
+                  timestampString = "511631744.663698"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "624">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Roket.ChallengeViewController.(getPlayersData () -&gt; ()).(closure #1)"
+                  moduleName = "Roket"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruiong/Desktop/IOS%20course%20/Roket/Roket/ChallengeViewController.swift"
+                  timestampString = "511631744.667692"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "720">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

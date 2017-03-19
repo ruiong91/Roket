@@ -13,7 +13,7 @@ import FirebaseStorage
 
 class ChallengeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var players : [User] = []
+    var players : [Player] = []
     var dbRef : FIRDatabaseReference!
 
     override func viewDidLoad() {
@@ -21,15 +21,26 @@ class ChallengeViewController: UIViewController, UICollectionViewDataSource, UIC
         
         dbRef = FIRDatabase.database().reference()
 
+        rankCollectionView.dataSource = self
         rankCollectionView.isPagingEnabled = true
         
         rankCollectionView.register(RankCollectionViewCell.cellNib, forCellWithReuseIdentifier: RankCollectionViewCell.cellIdentifier)
-        
+        getPlayersData()
         rankCollectionView.reloadData()
     }
     
     func getPlayersData(){
         
+        dbRef.child("games").child("-Kf_WJg2tUQJx73wLSUk").child("players").queryOrderedByValue().observe(.childAdded, with: { (snapshot) in
+            let newPlayer = Player()
+            
+            
+            newPlayer.uid = snapshot.key
+            newPlayer.score = snapshot.value as! String
+            
+            self.players.append(newPlayer)
+            
+        })
     }
     
 
@@ -43,6 +54,9 @@ class ChallengeViewController: UIViewController, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rankCell", for: indexPath) as? RankCollectionViewCell else {return UICollectionViewCell()}
         
+        let player = players[indexPath.row]
+        cell.stepsLabel.text = player.score
+       
         return cell
     }
     
