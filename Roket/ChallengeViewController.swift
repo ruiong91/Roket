@@ -26,7 +26,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDataSource, UIC
         
         rankCollectionView.register(RankCollectionViewCell.cellNib, forCellWithReuseIdentifier: RankCollectionViewCell.cellIdentifier)
         getPlayersData()
-        rankCollectionView.reloadData()
+        
     }
     
     func getPlayersData(){
@@ -36,10 +36,10 @@ class ChallengeViewController: UIViewController, UICollectionViewDataSource, UIC
             
             
             newPlayer.uid = snapshot.key
-            newPlayer.score = snapshot.value as! String
+            newPlayer.score = (snapshot.value as? Int)!
             
             self.players.append(newPlayer)
-            
+            self.rankCollectionView.reloadData()
         })
     }
     
@@ -55,7 +55,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDataSource, UIC
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rankCell", for: indexPath) as? RankCollectionViewCell else {return UICollectionViewCell()}
         
         let player = players[indexPath.row]
-        cell.stepsLabel.text = player.score
+        cell.stepsLabel.text = String(player.score)
        
         return cell
     }

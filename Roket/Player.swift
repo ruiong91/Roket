@@ -12,7 +12,7 @@ class Player {
     
     
     var uid : String = ""
-    var score : String = ""
+    var score : Int = 0
 
     init(){}
 
