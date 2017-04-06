@@ -10,7 +10,7 @@ import Foundation
 
 class Game {
     
-    var players : [User]?
+    var players : [Player] = []
     var startTime : TimeInterval?
     var period : TimeInterval?
     var gameID : String?

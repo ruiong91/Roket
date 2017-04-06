@@ -13,6 +13,8 @@ class Player {
     
     var uid : String = ""
     var score : Int = 0
+    var username : String = ""
+    var ppUrl : URL?
 
     init(){}
 

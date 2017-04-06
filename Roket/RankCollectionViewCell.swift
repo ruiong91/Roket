@@ -18,7 +18,12 @@ class RankCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    @IBOutlet weak var ppImageView: UIImageView!
+    @IBOutlet weak var ppImageView: UIImageView!{
+        didSet{
+            ppImageView.layer.cornerRadius = ppImageView.frame.size.height/2
+            ppImageView.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var rankLabel: UILabel!

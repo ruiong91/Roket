@@ -9,6 +9,9 @@
 import UIKit
 
 class CustomHeaderCell: UITableViewCell {
+    
+    static let cellIdentifier = "CustomHeaderCell"
+    static let cellNib = UINib(nibName: "CustomHeaderCell", bundle: Bundle.main)
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,4 +24,8 @@ class CustomHeaderCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBOutlet weak var searchBar: UISearchBar!
 }
+
+
+

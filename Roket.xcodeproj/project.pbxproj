@@ -34,6 +34,11 @@
 		68B645C61E7D1F7900EA0110 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B645C51E7D1F7900EA0110 /* Game.swift */; };
 		68B645C91E7D2BE400EA0110 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B645C81E7D2BE400EA0110 /* HealthKit.framework */; };
 		68B645CB1E7D2CFD00EA0110 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B645CA1E7D2CFD00EA0110 /* HealthKitManager.swift */; };
+		68C8E4521E91E99500EA70B0 /* CustomHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C8E4501E91E99400EA70B0 /* CustomHeaderCell.swift */; };
+		68C8E4531E91E99500EA70B0 /* CustomHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68C8E4511E91E99400EA70B0 /* CustomHeaderCell.xib */; };
+		68D6FC431E93705500AB2D79 /* RankCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6FC421E93705500AB2D79 /* RankCollectionViewLayout.swift */; };
+		68D6FC461E939E8C00AB2D79 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6FC441E939E8C00AB2D79 /* GameCollectionViewCell.swift */; };
+		68D6FC471E939E8C00AB2D79 /* GameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68D6FC451E939E8C00AB2D79 /* GameCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +73,11 @@
 		68B645C71E7D2BE300EA0110 /* Roket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Roket.entitlements; sourceTree = "<group>"; };
 		68B645C81E7D2BE400EA0110 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		68B645CA1E7D2CFD00EA0110 /* HealthKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		68C8E4501E91E99400EA70B0 /* CustomHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderCell.swift; sourceTree = "<group>"; };
+		68C8E4511E91E99400EA70B0 /* CustomHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHeaderCell.xib; sourceTree = "<group>"; };
+		68D6FC421E93705500AB2D79 /* RankCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankCollectionViewLayout.swift; sourceTree = "<group>"; };
+		68D6FC441E939E8C00AB2D79 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
+		68D6FC451E939E8C00AB2D79 /* GameCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameCollectionViewCell.xib; sourceTree = "<group>"; };
 		D28811555267CE3022DA8B42 /* Pods_Roket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Roket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -111,6 +121,7 @@
 				68B645B01E7BC63F00EA0110 /* View Controllers */,
 				68B645AF1E7BC63B00EA0110 /* View */,
 				68B6459C1E7BC4C100EA0110 /* Assets.xcassets */,
+				68C8E4541E920F1A00EA70B0 /* Unused */,
 			);
 			path = Roket;
 			sourceTree = "<group>";
@@ -120,7 +131,9 @@
 			children = (
 				68B645961E7BC4C100EA0110 /* Main.storyboard */,
 				68B645C21E7D119200EA0110 /* UserTableViewCell.xib */,
+				68D6FC451E939E8C00AB2D79 /* GameCollectionViewCell.xib */,
 				6837BCF91E7ED7DE00A9CA98 /* RankCollectionViewCell.xib */,
+				68C8E4511E91E99400EA70B0 /* CustomHeaderCell.xib */,
 				68B6459E1E7BC4C100EA0110 /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -133,12 +146,14 @@
 				68B645B21E7BE3A600EA0110 /* LogInViewController.swift */,
 				68B645B41E7BE3B500EA0110 /* SignUpViewController.swift */,
 				68B645941E7BC4C100EA0110 /* HomeViewController.swift */,
-				68B645A71E7BC5DC00EA0110 /* InviteViewController.swift */,
 				68B645BD1E7C161400EA0110 /* AddUserViewController.swift */,
+				68C8E4501E91E99400EA70B0 /* CustomHeaderCell.swift */,
 				68B645C11E7D119200EA0110 /* UserTableViewCell.swift */,
 				68B645A91E7BC5EF00EA0110 /* ChallengeViewController.swift */,
 				68B645AB1E7BC60D00EA0110 /* HistoryViewController.swift */,
+				68D6FC441E939E8C00AB2D79 /* GameCollectionViewCell.swift */,
 				6837BCF81E7ED7DE00A9CA98 /* RankCollectionViewCell.swift */,
+				68D6FC421E93705500AB2D79 /* RankCollectionViewLayout.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -166,6 +181,14 @@
 				6837BCF01E7E856200A9CA98 /* History.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		68C8E4541E920F1A00EA70B0 /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				68B645A71E7BC5DC00EA0110 /* InviteViewController.swift */,
+			);
+			name = Unused;
 			sourceTree = "<group>";
 		};
 		8DE9C933C8E64C372C8A601F /* Frameworks */ = {
@@ -254,9 +277,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68C8E4531E91E99500EA70B0 /* CustomHeaderCell.xib in Resources */,
 				68B645A01E7BC4C100EA0110 /* LaunchScreen.storyboard in Resources */,
 				68B645B71E7BF6A700EA0110 /* GoogleService-Info.plist in Resources */,
 				68B6459D1E7BC4C100EA0110 /* Assets.xcassets in Resources */,
+				68D6FC471E939E8C00AB2D79 /* GameCollectionViewCell.xib in Resources */,
 				68B645981E7BC4C100EA0110 /* Main.storyboard in Resources */,
 				6837BCFB1E7ED7DE00A9CA98 /* RankCollectionViewCell.xib in Resources */,
 				68B645C41E7D119200EA0110 /* UserTableViewCell.xib in Resources */,
@@ -318,16 +343,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68D6FC431E93705500AB2D79 /* RankCollectionViewLayout.swift in Sources */,
 				6837BCF11E7E856200A9CA98 /* History.swift in Sources */,
 				68B6459B1E7BC4C100EA0110 /* Roket.xcdatamodeld in Sources */,
 				68B645BE1E7C161400EA0110 /* AddUserViewController.swift in Sources */,
 				68B645C31E7D119200EA0110 /* UserTableViewCell.swift in Sources */,
 				68B645AA1E7BC5EF00EA0110 /* ChallengeViewController.swift in Sources */,
+				68C8E4521E91E99500EA70B0 /* CustomHeaderCell.swift in Sources */,
 				68B645C61E7D1F7900EA0110 /* Game.swift in Sources */,
 				68B645C01E7C16E200EA0110 /* TransitionManager.swift in Sources */,
 				68B645951E7BC4C100EA0110 /* HomeViewController.swift in Sources */,
 				68B645B31E7BE3A600EA0110 /* LogInViewController.swift in Sources */,
 				6837BCEF1E7E815E00A9CA98 /* ViewController.swift in Sources */,
+				68D6FC461E939E8C00AB2D79 /* GameCollectionViewCell.swift in Sources */,
 				68B645AC1E7BC60D00EA0110 /* HistoryViewController.swift in Sources */,
 				68B645CB1E7D2CFD00EA0110 /* HealthKitManager.swift in Sources */,
 				6837BCFA1E7ED7DE00A9CA98 /* RankCollectionViewCell.swift in Sources */,

@@ -20,7 +20,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     var zeroTime = TimeInterval()
     
-    var timer : Timer = Timer()
+    var timer : Timer?
+    var counter = 86400
+    var countdown = "loading..."
+    
     
     var newDate = Date()
     var endDate = Date()
@@ -51,6 +54,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             print("Need to Enable Location")
         }
         
+        rankBtn.isEnabled = false
         // We cannot access the user's HealthKit data without specific permission.
         getHealthKitPermission()
         checkForInvitation()
@@ -138,14 +142,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             self.stepsLabel.text = String(stepsInt)
             self.dbRef.child("users").child((self.currentUser?.uid)!).child("history").child(newDateInterval).setValue(stepsInt)
         }
-        
-        //        retrieveDailyStepCount { (steps) in
-        //            let stepsInt = Int(steps)
-        //            self.stepsLabel.text = String(stepsInt)
-        
-        //TODO: save to database
-        
-        
     }
     
     
@@ -164,7 +160,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                     let startIntervalDouble = Double(startIntervalString)
                     let startInterval = TimeInterval(startIntervalDouble!)
                     let startDate = Date(timeIntervalSinceReferenceDate: startInterval)
-                    
+                    eachGame.startTime = startInterval
+                    self.displayGameTimer()
                     
                     self.retrieveStepCount(startDate: startDate, completion: { (steps) in
                         
@@ -173,13 +170,67 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                         self.kcalBurntLabel.text = String(kcalBurnt)
                         
                         self.dbRef.child("games").child(gameID).child("players").child((self.currentUser?.uid)!).setValue(stepsInt)
+                        
+                        
+                    })
+                })
+                
+                dbRef.child("games").child(gameID).child("players").queryOrderedByValue().observeSingleEvent(of: .childAdded, with: { (snapshot) in
+                    let newPlayer = Player()
+                    
+                    
+                    newPlayer.uid = snapshot.key
+                    newPlayer.score = (snapshot.value as? Int)!
+                    
+                    self.dbRef.child("users").child(newPlayer.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                        
+                        let value = snapshot.value as? NSDictionary
+                        
+                        newPlayer.username = (value?["username"] as? String)!
+                        let ppUrl = value?["profilePicURL"] as? String
+                        newPlayer.ppUrl = URL(string: ppUrl!)
+                        
+                        eachGame.players.append(newPlayer)
+                        self.rankBtn.isEnabled = true
                     })
                 })
             }
         }
     }
     
+    func displayGameTimer(){
+        
+        let oldestGame = gamesPlaying[0]
+        if let startTime = oldestGame.startTime {
+            let startDate = Date(timeIntervalSinceReferenceDate: startTime)
+            
+            self.timer = Timer.init(fireAt: startDate, interval: 1.0, target: self, selector: #selector(self.countdownTimer), userInfo: nil, repeats: true)
+            
+            RunLoop.current.add(self.timer!, forMode: .defaultRunLoopMode)
+        }
+    }
     
+    func timeFormatted(totalSeconds: Int) -> String {
+        
+        let minutes: Int = (totalSeconds / 60) % 60
+        let hours: Int = totalSeconds / 3600
+        
+        return String(format: "%02d : %02d", hours, minutes)
+    }
+    
+    func countdownTimer(){
+        
+        self.counter -= 1
+        
+        if self.counter < 0 {
+            self.timer?.invalidate()
+        }
+        else {
+            countdown = self.timeFormatted(totalSeconds: self.counter)
+            gamesLabel.text = countdown
+            print(countdown)
+        }
+    }
     
     //--------------------------CHALLENGE INVITATION-------------------------//
     
@@ -198,7 +249,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             }
             
             self.getChallengeResult()
-            self.gamesLabel.text = String(self.gamesPlaying.count)
         })
     }
     
@@ -262,11 +312,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     func goToRank(){
         guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "ChallengeViewController") as?  ChallengeViewController else { return }
         
+        controller.gamesPlaying = gamesPlaying
+        
         navigationController?.pushViewController(controller, animated: true)
     }
     
     func goToInvite(){
-        guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "InviteViewController") as?  InviteViewController else { return }
+        guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddUserViewController") as?  AddUserViewController else { return }
         
         present(controller, animated: true, completion: nil)
     }
@@ -345,3 +397,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
 //QUESTIONS:
 //1. how to request to read > 1 health data
 //2. how to create and use public func
+
+//TODO:
+//fetch ranking D
+//get cert
+//fix memory performance D
+//adjust kcal
+//animation & UI
+//make history look nicer

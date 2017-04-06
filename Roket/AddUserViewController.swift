@@ -18,17 +18,21 @@ class AddUserViewController: UIViewController, AddPlayerDelegate {
     var filteredUsers : [User] = []
     var players : [User] = []
     
+    var timer : Timer?
+    var counter = 86400
+    var countdown = "24 : 00"
+    
+    let currentUser = FIRAuth.auth()?.currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dbRef = FIRDatabase.database().reference()
         
-        searchBar.delegate = self
-        
         usersTableView.delegate = self
         usersTableView.dataSource = self
         usersTableView.register(UserTableViewCell.cellNib, forCellReuseIdentifier: UserTableViewCell.cellIdentifier)
+        usersTableView.register(CustomHeaderCell.cellNib, forCellReuseIdentifier: CustomHeaderCell.cellIdentifier)
         usersTableView.estimatedRowHeight = 80
         usersTableView.rowHeight = UITableViewAutomaticDimension
         
@@ -71,62 +75,108 @@ class AddUserViewController: UIViewController, AddPlayerDelegate {
         
         players.append(userAdded)
         
-//        if let url = userAdded.ppUrl {
-//            if let data = NSData(contentsOf: url as URL) {
-//                challengePage.invitedImageView.image = UIImage(data: data as Data)
-//                
-//            }
-//        }
+        //        if let url = userAdded.ppUrl {
+        //            if let data = NSData(contentsOf: url as URL) {
+        //                challengePage.invitedImageView.image = UIImage(data: data as Data)
+        //
+        //            }
+        //        }
     }
     
-    func done(){
-        //returning to challengePage
-        guard let challengePage = storyboard?.instantiateViewController(withIdentifier: "InviteViewController") as? InviteViewController else {return}
-        present(challengePage, animated: true, completion: nil)
+    func timeFormatted(totalSeconds: Int) -> String {
+       
+        let minutes: Int = (totalSeconds / 60) % 60
+        let hours: Int = totalSeconds / 3600
         
-        challengePage.players = players
+        return String(format: "%02d : %02d", hours, minutes)
     }
+    
+    func countdownTimer(){
+        
+        self.counter -= 1
+        
+        if self.counter < 0 {
+            self.timer?.invalidate()
+        }
+        else {
+            countdown = self.timeFormatted(totalSeconds: self.counter)
+            print(countdown)
+        }
+    }
+    
+    func startChallenge(){
+        //save game & player to firebase
+        dbRef = FIRDatabase.database().reference()
+        let autoidRef = dbRef.child("games").childByAutoId()
+        let gameStartDate = Date()
+        let gameStartDateInt = Int(gameStartDate.timeIntervalSinceReferenceDate)
+        let gameStartInterval = String(gameStartDateInt)
+        print("this is \(gameStartDate)")
+        
+        self.timer = Timer.init(fireAt: gameStartDate, interval: 1.0, target: self, selector: #selector(countdownTimer), userInfo: nil, repeats: true)
+        //(timeInterval: 1.0, target: self, selector: #selector(countdownTimer), userInfo: nil, repeats: true)
+        
+        RunLoop.current.add(timer!, forMode: .defaultRunLoopMode)
+        
+        for each in players {
+            let playerUID = each.uid
+            dbRef.child("users").child(each.uid).child("games").child(autoidRef.key).setValue(false)
+            
+        }
+        dbRef.child("users").child((currentUser?.uid)!).child("games").child(autoidRef.key).setValue(true)
+        dbRef.child("games").child(autoidRef.key).child("players").child((currentUser?.uid)!).setValue(0)
+        
+        dbRef.child("games").child(autoidRef.key).child("startDate").setValue(gameStartInterval)
+        
+        backToHome()
+    }
+    
+    func backToHome(){
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else {return}
+        
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var usersTableView: UITableView!
     
-    @IBOutlet weak var doneBtn: UIButton!{
+    @IBOutlet weak var homeBtn: UIButton!
+        {
         didSet{
             
-            doneBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-            doneBtn.layer.cornerRadius = 15
-            doneBtn.layer.borderWidth = 2
-            doneBtn.layer.borderColor = UIColor.black.cgColor
+            homeBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+            homeBtn.layer.cornerRadius = 15
+            homeBtn.layer.borderWidth = 2
+            homeBtn.layer.borderColor = UIColor.black.cgColor
             
-            doneBtn.addTarget(self, action: #selector(done), for: .touchUpInside)
+            homeBtn.addTarget(self, action: #selector(backToHome), for: .touchUpInside)
         }
     }
     
-}
-
-extension AddUserViewController : UISearchBarDelegate{
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.characters.count == 0 {
-            resetSearch()
-        } else {
-            filteredUsers = allUsers.filter({( user : User) -> Bool in
-                return user.username?.lowercased().range(of: searchText.lowercased()) != nil
-            })
+    @IBOutlet weak var startBtn: UIButton!{
+        didSet{
             
-            usersTableView.reloadData()
+            startBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+            startBtn.layer.cornerRadius = 15
+            startBtn.layer.borderWidth = 2
+            startBtn.layer.borderColor = UIColor.black.cgColor
             
+            startBtn.addTarget(self, action: #selector(startChallenge), for: .touchUpInside)
         }
     }
     
-    func resetSearch(){
-        self.searchBar.endEditing(true)
-        filteredUsers = allUsers
-        usersTableView.reloadData()
-    }
+    
 }
 
 extension AddUserViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -153,5 +203,49 @@ extension AddUserViewController : UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let cell = usersTableView.dequeueReusableCell(withIdentifier: "CustomHeaderCell") as? CustomHeaderCell else {return UITableViewCell()}
+        
+        cell.searchBar.delegate = self
+        
+        return cell
+    }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return 430
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        var sectionHeaderHeight: CGFloat = 385
+        if scrollView.contentOffset.y <= sectionHeaderHeight && scrollView.contentOffset.y >= 0 {
+            scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0)
+        }
+        else if scrollView.contentOffset.y >= sectionHeaderHeight {
+            scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0)
+        }
+        
+    }
 }
+extension AddUserViewController : UISearchBarDelegate{
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.characters.count == 0 {
+            resetSearch()
+        } else {
+            filteredUsers = allUsers.filter({( user : User) -> Bool in
+                return user.username?.lowercased().range(of: searchText.lowercased()) != nil
+            })
+            
+            usersTableView.reloadData()
+            
+        }
+    }
+    
+    func resetSearch(){
+        //self.searchBar.endEditing(true)
+        filteredUsers = allUsers
+        usersTableView.reloadData()
+    }
+}
+

@@ -10,9 +10,13 @@ import UIKit
 
 class GameCollectionViewCell: UICollectionViewCell {
 
+    static let cellIdentifier = "gameCell"
+    static let cellNib = UINib(nibName: "GameCollectionViewCell", bundle: Bundle.main)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    @IBOutlet weak var gameLabel: UILabel!
 }
